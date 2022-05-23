@@ -1,3 +1,8 @@
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/solid'
+import '@fortawesome/fontawesome-free/js/regular'
+import '@fortawesome/fontawesome-free/js/brands'
+
 window._ = require('lodash');
 
 /**
@@ -9,7 +14,9 @@ window._ = require('lodash');
 try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
-
+    window.Swal = require("sweetalert2");
+    window.moment = require('moment');
+    require('datatables.net-bs4');
     require('bootstrap');
 } catch (e) {}
 

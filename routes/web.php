@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LicenceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +21,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/getLicence', [LicenceController::class, 'getLicences'])->name('getLicense');
+Route::post('/addLicence', [LicenceController::class, 'saveLicence'])->name('saveLicense');
+Route::put('/updateLicence', [LicenceController::class, 'updateLicence'])->name('updateLicence');
+Route::get('/deleteLicense', [LicenceController::class, 'updateLicence'])->name('deleteLicence');
+Route::delete('/deleteLicense/{id}', [LicenceController::class, 'deleteLicence']);
+Route::post('prolongementLicence', [LicenceController::class, 'prolongementLicence'])->name('prolongementLicence');
